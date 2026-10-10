@@ -1,0 +1,103 @@
+.monthlySummary {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-card, rgba(255, 255, 255, 0.85));
+  border: 1px solid var(--color-border-card, rgba(255, 255, 255, 0.8));
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border-separator);
+
+    .title {
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: -0.35px;
+    }
+
+    .year {
+      color: var(--color-text-subtle);
+      background-color: var(--color-bg-toggle);
+      padding: 3px 8px;
+
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16.5px;
+      border-radius: 4px;
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--color-border-separator);
+      }
+
+      .monthName {
+        color: var(--color-text-body);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      .amountWrapper {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .trendIcon {
+          font-size: 15px;
+          line-height: 1;
+
+          &.positive {
+            color: var(--color-positive);
+          }
+
+          &.negative {
+            color: var(--color-negative-icon);
+          }
+        }
+
+        .amount {
+          color: var(--color-text-main);
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 16px;
+
+          &.positive {
+            color: var(--color-positive);
+          }
+
+          &.negative {
+            color: var(--color-negative-icon);
+          }
+        }
+
+        .currency {
+          color: var(--color-text-placeholder);
+          font-size: 10px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

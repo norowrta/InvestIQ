@@ -1,0 +1,137 @@
+.categoryBreakdown {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: 24px;
+  padding: 20px 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    padding: 28px 32px;
+    gap: 32px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border-separator);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .headerTxt {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        color: var(--color-text-main);
+        margin: 0;
+
+        @media (min-width: 768px) {
+          font-size: 22px;
+          line-height: 28px;
+        }
+      }
+
+      .subtitle {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: var(--color-text-subtle);
+        margin: 0;
+
+        @media (min-width: 768px) {
+          font-size: 13px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .periodNavigator {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+      align-self: flex-start;
+
+      @media (min-width: 768px) {
+        align-self: center;
+      }
+
+      .navArrowBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        padding: 4px;
+        cursor: pointer;
+        border-radius: 6px;
+
+        span {
+          color: var(--color-text-placeholder);
+          font-size: 20px;
+          line-height: 1;
+          transition:
+            color 0.2s ease,
+            transform 0.15s ease;
+        }
+
+        &:hover span {
+          color: var(--color-text-label);
+        }
+
+        &:active span {
+          transform: scale(0.9);
+        }
+      }
+
+      .periodBadge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 6px;
+        color: var(--color-text-label);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+        white-space: nowrap;
+        font-family: inherit;
+      }
+    }
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      gap: 32px;
+    }
+
+    @media (min-width: 1280px) {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+  }
+}

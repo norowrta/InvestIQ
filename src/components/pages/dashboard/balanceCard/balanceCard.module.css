@@ -1,0 +1,145 @@
+.balanceCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  background-color: var(--color-bg-card);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .balanceSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .balanceLabel {
+      color: var(--color-text-subtle);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16.5px;
+      letter-spacing: 0.55px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .balanceTotal {
+      color: var(--color-text-main);
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36px;
+      letter-spacing: -0.75px;
+      text-align: left;
+
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+
+      @media (min-width: 768px) {
+        font-size: 32px;
+        letter-spacing: -0.8px;
+      }
+
+      .currencyUnit {
+        color: var(--color-text-subtle);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0px;
+        text-align: left;
+        margin-bottom: 3px;
+      }
+
+      &.balanceNegative {
+        color: var(--color-negative);
+
+        .currencyUnit {
+          color: var(--color-negative);
+        }
+      }
+    }
+  }
+
+  .badgeList {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .divider {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+        height: 29px;
+        width: 1px;
+        background-color: var(--color-border-divider);
+      }
+    }
+
+    .badge {
+      padding: 6px 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .badgeIcon {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      .badgeAmount {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0px;
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        gap: 2px;
+
+        .badgeCurrency {
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 12.5px;
+          letter-spacing: 0px;
+          text-align: left;
+        }
+      }
+
+      &.badgeIncome {
+        border: 1px solid var(--color-positive-border);
+        background-color: var(--color-positive-bg);
+        color: var(--color-positive);
+
+        .badgeIcon {
+          color: var(--color-positive-icon);
+        }
+        .badgeCurrency {
+          color: var(--color-positive);
+        }
+      }
+
+      &.badgeExpense {
+        border: 1px solid var(--color-negative-border);
+        background-color: var(--color-negative-bg);
+        color: var(--color-negative);
+
+        .badgeIcon {
+          color: var(--color-negative-icon);
+        }
+        .badgeCurrency {
+          color: var(--color-negative);
+        }
+      }
+    }
+  }
+}

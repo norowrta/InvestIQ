@@ -1,0 +1,6 @@
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 32px 0;
+}

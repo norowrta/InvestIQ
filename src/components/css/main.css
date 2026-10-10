@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 40px;
+  }
+}
+
+.bgContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  pointer-events: none;
+
+  overflow: hidden;
+  background-color: #faf9fc;
+
+  .bg3 {
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 50vw;
+    height: 50vw;
+    max-width: 640px;
+    max-height: 640px;
+
+    border-radius: 50%;
+    filter: blur(6vw);
+    background: rgba(251, 124, 47, 1);
+    opacity: 0.35;
+  }
+  .bg2 {
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    right: -6vw;
+    top: 15vh;
+    max-width: 576px;
+    max-height: 576px;
+
+    border-radius: 50%;
+    filter: blur(6vw);
+    background: rgba(254, 215, 170, 1);
+    opacity: 0.6;
+  }
+  .bg1 {
+    position: absolute;
+    width: 56vw;
+    height: 56vw;
+    left: 20vw;
+    bottom: -15vh;
+    max-width: 704px;
+    max-height: 704px;
+
+    border-radius: 50%;
+    filter: blur(6vw);
+    background: rgba(192, 132, 252, 1);
+    opacity: 0.3;
+  }
+}
