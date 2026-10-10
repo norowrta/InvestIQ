@@ -12,35 +12,40 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import Reports from "./components/pages/reports/Reports";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: React.createElement(App),
+      children: [
+        {
+          path: "auth",
+          element: React.createElement(Auth),
+        },
+        {
+          element: React.createElement(ProtectedRoute),
+          children: [
+            {
+              index: true,
+              element: React.createElement(Dashboard),
+            },
+            {
+              path: "reports",
+              element: React.createElement(Reports),
+            },
+          ],
+        },
+        {
+          path: "*",
+          element: React.createElement("div", null, "Page not found (404)"),
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: React.createElement(App),
-    children: [
-      {
-        path: "auth",
-        element: React.createElement(Auth),
-      },
-      {
-        element: React.createElement(ProtectedRoute),
-        children: [
-          {
-            index: true,
-            element: React.createElement(Dashboard),
-          },
-          {
-            path: "reports",
-            element: React.createElement(Reports),
-          },
-        ],
-      },
-      {
-        path: "*",
-        element: React.createElement("div", null, "Page not found (404)"),
-      },
-    ],
+    basename: import.meta.env.BASE_URL,
   },
-]);
+);
 
 createRoot(document.getElementById("root")!).render(
   React.createElement(

@@ -131,7 +131,7 @@
       display: grid;
       grid-template-columns: 440px 1fr;
       gap: 32px;
-      align-items: start;
+      align-items: center;
     }
   }
 }
